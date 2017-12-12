@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_syspat</name>
+    <author>Yosri Chebbi</author>
+    <creationDate>November 2017</creationDate>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>chebbi.yosri@gmail.com</authorEmail>
+    <authorUrl>chebbi.yosri@gmail.com</authorUrl>
+    <version>1.0</version>
+    <description>COM_SYSPAT_XML_DESCRIPTION</description>
+
+    <files folder="site">
+	    <folder>models</folder>
+	    <folder>views</folder>
+		<filename>controller.php</filename>
+        <filename>syspat.php</filename>
+        <filename>index.html</filename>
+    </files>
+    
+    <administration>
+        <menu>COM_SYSPAT</menu>
+        <submenu>
+            
+        </submenu>
+        
+        <files folder="admin">
+			<folder>controllers</folder>
+	        <folder>models</folder>
+	        <folder>views</folder>
+			<folder>tables</folder>
+			<filename>controller.php</filename>
+            <filename>syspat.php</filename>
+            <filename>index.html</filename>
+        </files>
+    </administration>
+</extension>

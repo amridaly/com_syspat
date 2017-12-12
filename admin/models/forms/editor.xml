@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addrulepath="/administrator/components/com_mybooks/models/rules" >
+	<fieldset name="details">
+	<!-- jcb code -->
+		<field name="editor_id" type="hidden" default="" label="COM_MYBOOKS_EDITOR_EDITOR_ID_LABEL" description="COM_MYBOOKS_EDITOR_EDITOR_ID_DESC" readonly="true" />
+		<field name="name" type="text" default="" label="COM_MYBOOKS_EDITOR_NAME_LABEL" description="COM_MYBOOKS_EDITOR_NAME_DESC" maxlength="100" required="true" multiple="false" />
+		<field name="city" type="text" default="" label="COM_MYBOOKS_EDITOR_CITY_LABEL" description="COM_MYBOOKS_EDITOR_CITY_DESC" maxlength="50" required="true" multiple="false" />
+		<field name="published" type="radio" default="1" label="COM_MYBOOKS_EDITOR_PUBLISHED_LABEL" description="COM_MYBOOKS_EDITOR_PUBLISHED_DESC" maxlength="1" required="true" multiple="false" >
+<option value="0">JNO</option>
+<option value="1">JYES</option>
+</field>
+		<field name="checked_out" type="hidden" default="0" label="COM_MYBOOKS_EDITOR_CHECKED_OUT_LABEL" description="COM_MYBOOKS_EDITOR_CHECKED_OUT_DESC" maxlength="10" required="false" multiple="false" />
+		<field name="checked_out_time" type="hidden" default="0000-00-00 00:00:00" label="COM_MYBOOKS_EDITOR_CHECKED_OUT_TIME_LABEL" description="COM_MYBOOKS_EDITOR_CHECKED_OUT_TIME_DESC" maxlength="255" required="false" multiple="false" />
+		<field name="hits" type="hidden" default="0" label="COM_MYBOOKS_EDITOR_HITS_LABEL" description="COM_MYBOOKS_EDITOR_HITS_DESC" maxlength="10" required="false" multiple="false" />
+		<field name="ordering" type="text" default="0" label="COM_MYBOOKS_EDITOR_ORDERING_LABEL" description="COM_MYBOOKS_EDITOR_ORDERING_DESC" maxlength="11" required="true" class="inputbox validate-numeric" multiple="false" />
+	<!-- jcb code -->
+
+	</fieldset>
+	<fields name="params">
+		<fieldset name="params" label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS">
+			<!--
+			<field name="param1_list_select" type="list" label="COM_MYBOOKS_EDITOR_PARAM1_LABEL" description="COM_MYBOOKS_EDITOR_PARAM1_DESC" default="" >
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			-->
+		</fieldset>
+	</fields>
+</form>
