@@ -1,3 +1,4 @@
+<?php jimport( 'joomla.html.pagination' ); ?> 
 <table cellpadding="0" cellspacing="0" width="100%" class="table table-striped">
     <thead>
             <tr>
@@ -8,7 +9,6 @@
                 <th scope="col">Date début</th>
                 <th scope="col">Date echéance</th>
                 <th scope="col">Structure</th>
-                <th scope="col">Responsable</th>
             </tr>
     </thead>
     <tbody id="action-list">
@@ -16,6 +16,12 @@
             $this->_actionEntryView->action = $this->actions[$i];
             echo $this->_actionEntryView->render();
 	} ?>
-	</tbody>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="7">
+                <div class="jcb_pagination"><?php echo $this->pagination->getPagesLinks(); ?> - <?php echo $this->pagination->getPagesCounter(); ?></div>
+            </td>
+        </tr>
+    </tfoot>    
 </table>
-<?php echo $this->_pagination ?>

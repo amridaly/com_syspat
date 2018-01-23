@@ -6,5 +6,4 @@
   <td><?php echo $this->action->START_DATE; ?></td>
   <td><?php echo $this->action->DUE_DATE; ?></td>
   <td><?php echo $this->action->STRUCTURE_CODE; ?></td>
-  <td><?php echo $this->action->RESPONSIBLE_NAME; ?></td>
 </tr>

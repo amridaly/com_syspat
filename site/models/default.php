@@ -1,7 +1,7 @@
 <?php // no direct access
 
 defined( '_JEXEC' ) or die( 'Restricted access' ); 
- 
+jimport( 'joomla.html.pagination' );
 class SyspatModelsDefault extends JModelBase
 {
   protected $__state_set  = null;
@@ -190,7 +190,8 @@ class SyspatModelsDefault extends JModelBase
     // Lets load the content if it doesn't already exist
     if (empty($this->_pagination)) 
     {
-      $this->_pagination = new JPagination( $this->getTotal(), $this->getState($this->_view.'_limitstart'), $this->getState($this->_view.'_limit'),null,JRoute::_('index.php?view='.$this->_view.'&layout='.$this->_layout));
+         $this->_pagination = new JPagination( $this->getTotal(), $this->limitstart, $this->limit);
+     // $this->_pagination = new JPagination( $this->getTotal(), $this->getState($this->_view.'_limitstart'), $this->getState($this->_view.'_limit'),null,JRoute::_('index.php?view='.$this->_view.'&layout='.$this->_layout));
     }
      
     return $this->_pagination;
