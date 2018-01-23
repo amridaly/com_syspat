@@ -87,7 +87,7 @@ class SyspatModelEvaluation_list extends JModelLegacy
         $query = $db->getQuery(true);
         $query
 	    ->select('COUNT(*)')
-        ->from($db->quoteName('eval_action_activ', 'e'))
+            ->from($db->quoteName('eval_action_activ', 'e'));
 
 		$db->setQuery($query);
 		return $db->loadResult();

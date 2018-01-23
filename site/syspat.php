@@ -2,30 +2,32 @@
 
 // no direct access
 defined('_JEXEC') or die('Restricted access');
-
-
-// import joomla controller library
-jimport('joomla.application.component.controller');
-
-
-$ctrl='Syspat';
-$input = JFactory::getApplication()->input;
-// Require specific controller if requested
-if($controller = $input->getWord('controller')) {
-	$ctrl = $controller;
-}else{
-	// define default view if you need routing...
-	//JRequest::setVar( 'view', '***' ); // insert here!! 
-}
+//sessions
+jimport( 'joomla.session.session' );
  
-// Get an instance of the required controller
-$controller = JControllerLegacy::getInstance($ctrl);
+//load tables
+JTable::addIncludePath(JPATH_COMPONENT.'/tables');
+
+//load classes
+JLoader::registerPrefix('Syspat', JPATH_COMPONENT);
+
+//Load plugins
+JPluginHelper::importPlugin('syspat');
+
+//Load styles and javascripts
+SyspatHelpersStyle::load();
+
+//application
+$app = JFactory::getApplication();
+$router = $app->getRouter();
+$router->setMode(0);
+// Require specific controller if requested
+$controller = $app->input->get('controller','default');
+
+// Create the controller
+$classname  = 'SyspatControllers'.ucwords($controller);
+$controller = new $classname();
  
 // Perform the Request task
+$controller->execute();
 
-$controller->execute($input->getCmd('task'));
- 
-// Redirect if set by the controller
-$controller->redirect();
-
-?>

@@ -1,36 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
     <name>com_syspat</name>
-    <author>Yosri Chebbi</author>
-    <creationDate>November 2017</creationDate>
-    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-    <authorEmail>chebbi.yosri@gmail.com</authorEmail>
-    <authorUrl>chebbi.yosri@gmail.com</authorUrl>
-    <version>1.0</version>
+    <author>AMRI Mohamed Ali</author>
+    <creationDate>Janvier 2018</creationDate>
+    <license></license>
+    <authorEmail>amri.daly@gmail.com</authorEmail>
+    <authorUrl>amri.daly@gmail.com</authorUrl>
+    <version>2.2</version>
     <description>COM_SYSPAT_XML_DESCRIPTION</description>
-
+    <install>
+        <sql>
+            <file charset="utf8" driver="mysql">sql/install.mysql.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file charset="utf8" driver="mysql">sql/uninstall.mysql.sql</file>
+        </sql>            
+    </uninstall>
     <files folder="site">
-	    <folder>models</folder>
-	    <folder>views</folder>
-		<filename>controller.php</filename>
+	<folder>assets</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>languages</folder>
+        <folder>models</folder>
+        <folder>tables</folder>
+        <folder>views</folder>
+        <filename>router.php</filename>
         <filename>syspat.php</filename>
         <filename>index.html</filename>
     </files>
-    
+    <scriptfile>install.php</scriptfile>
+    <languages folder="site">
+	<language tag="fr-FR">languages/fr-FR/fr-FR.com_syspat.ini</language>
+    </languages>
     <administration>
-        <menu>COM_SYSPAT</menu>
+        <menu link="option=com_syspat" img="components/com_syspat/assets/images/syspat_icon.png">COM_SYSPAT</menu>
         <submenu>
-            
+            <menu view="statistics" img="components/com_syspat/assets/images/settings_icon.png" 
+                        alt="SYSPAT/Statistics">COM_SYSPAT_SETTINGS</menu>
         </submenu>
-        
         <files folder="admin">
-			<folder>controllers</folder>
-	        <folder>models</folder>
-	        <folder>views</folder>
-			<folder>tables</folder>
-			<filename>controller.php</filename>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>languages</folder>
+            <folder>models</folder>
+            <folder>views</folder>
+            <folder>sql</folder>
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
             <filename>syspat.php</filename>
             <filename>index.html</filename>
-        </files>
+        </files>  
+        <languages folder="admin">
+                <language tag="fr-FR">languages/fr-FR/fr-FR.com_syspat.ini</language>
+                <language tag="fr-FR">languages/fr-FR/fr-FR.com_syspat.sys.ini</language>
+        </languages>
     </administration>
 </extension>
