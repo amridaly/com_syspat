@@ -13,6 +13,8 @@ class SyspatViewsActionHtml extends JViewHtml
        
         $this->_actionEntryView = SyspatHelpersView::load('action','_entry','phtml');
         
+        
+        
         $this->pagination = $model->getPagination();
     //display
     return parent::render();

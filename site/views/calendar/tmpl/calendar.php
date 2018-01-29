@@ -8,7 +8,11 @@ JHtml::_('script', 'com_syspat/moment.min.js', false, true);
 JHtml::_('script', 'com_syspat/fullcalendar.min.js', false, true);
 JHtml::_('script', 'com_syspat/locale-all.js', false, true);
 ?>
-<h3>Calendrier</h3>
+<h3>Calendrier du PAT</h3>
+<p>Les autorités haïtiennes se sont engagées dans la définition d’une stratégie globale et cohérente de réformes des systèmes de gestion des finances publiques. 
+    En effet, le Gouvernement a procédé en mai 2014 à l’adoption de la « Stratégie de Réformes des Finances Publiques (SRFP) » et de son Plan d’Action triennal (PAT) 2014-2016. 
+    Le PAT 2014-2016 permet d’opérationnaliser concrètement les actions et les résultats attendus, et définit un séquençage pour chacun des processus de réforme.
+</p>
 </br>
 <div id='calendar'></div>
 <script type="text/javascript">

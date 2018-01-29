@@ -1,7 +1,7 @@
 <?php // no direct access
 
 defined( '_JEXEC' ) or die( 'Restricted access' ); 
-jimport( 'joomla.html.pagination' );
+
 class SyspatModelsDefault extends JModelBase
 {
   protected $__state_set  = null;
@@ -16,6 +16,18 @@ class SyspatModelsDefault extends JModelBase
   {
 
     parent::__construct(); 
+        
+//        $app = JFactory::getApplication();
+//       // $limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->getCfg('list_limit'), 'int');
+//       
+//        
+//        $limitstart = $app->input->getUInt('limitstart', 0);
+//        // In case limit has been changed, adjust it
+//        $limitstart = ($limit != 0 ? (floor($limitstart / $limit) * $limit) : 0);
+// 
+//        $this->setState('limit', $limit);
+//        $this->setState('limitstart', $limitstart);
+        
   }
 
   public function store($data=null)
@@ -181,7 +193,7 @@ class SyspatModelsDefault extends JModelBase
     
     return $this->_total;
   }
- 
+
   /**
   * Generate pagination
   */
@@ -190,7 +202,9 @@ class SyspatModelsDefault extends JModelBase
     // Lets load the content if it doesn't already exist
     if (empty($this->_pagination)) 
     {
+      //  $this->_pagination = new JPagination($this->getTotal(), $this->getState('limitstart'), $this->getState('limit') );
          $this->_pagination = new JPagination( $this->getTotal(), $this->limitstart, $this->limit);
+        
      // $this->_pagination = new JPagination( $this->getTotal(), $this->getState($this->_view.'_limitstart'), $this->getState($this->_view.'_limit'),null,JRoute::_('index.php?view='.$this->_view.'&layout='.$this->_layout));
     }
      
